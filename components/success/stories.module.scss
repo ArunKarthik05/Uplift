@@ -9,9 +9,14 @@
     grid-auto-flow: column; 
     grid-auto-columns: minmax(40%, 1fr);
     @include respond-to(xs){
-        grid-auto-columns: minmax(80%,1fr);
-        padding: 1vh;
+        grid-auto-columns: minmax(100%,1fr);
+        padding: 1vh 30vh 0 0;
         margin:0 .5rem;
+    }
+    .subHeading{
+        @include respond-to(xs){
+            font-size: $font-mobile-size-text;
+        }
     }
     gap:10%;
     overflow-x: auto;
@@ -21,6 +26,7 @@
        text-align: center;
         border-radius: 3rem;
         min-height: 90vh;
+        // min-width: 100%;
         @include respond-to(xs){
             min-width: 100%;
         }

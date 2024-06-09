@@ -14,7 +14,6 @@ const Stories = ({ stories }) => {
     let ctx = gsap.context(() => {
         const storyContainer = slider.current;
         const panels = gsap.utils.toArray(storyContainer.querySelectorAll(`.${styles.storyDiv}`));
-        console.log(panels);
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
