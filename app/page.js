@@ -22,34 +22,38 @@ export default function Home() {
     {
       image: "personal-mentor.png",
       subHeading: "PERSONAL MENTORSHIP",
-      para: "Embark on a journey of growth and discovery. Let's unlock your potential, tap into your creativity, and build a foundation for success. Our tailored mentorship programs and interactive group sessions cover a wide array of subjects such as English speaking, basic programming, web development, AI/ML, and digital marketing."
+      para: "Embark on a journey of growth and discovery. Let's unlock your potential, tap into your creativity, and build a foundation for success. Our tailored mentorship programs and interactive group sessions cover a wide array of subjects such as English speaking, basic programming, web development, AI/ML, and digital marketing.",
     },
   ];
 
   const courses = [
     {
-      image: "spoken-english.png",
-      courseName: "SPOKEN ENGLISH",
+      image: "eng-1.png",
+      courseName: "INDIVIDUAL MASTERY",
       courseDetails: "Speak with Confidence: Elevate your Spoken English skills with our dynamic course",
-      hoverDetails: "English proficiency is crucial in today's globalized world. Our inclusive online English courses cater to individuals' diverse needs and constraints, helping you improve your language skills and boost your confidence."
+      hoverDetails: "English proficiency is crucial in today's globalized world. Our inclusive online English courses cater to individuals' diverse needs and constraints, helping you improve your language skills and boost your confidence.",
+      price: "₹14,999"
     },
+    {
+      image: "eng-2.png",
+      courseName: "GROUP ACCELERATOR",
+      courseDetails: "Master Full Stack Development: From Frontend to Backend, become a coding maestro",
+      hoverDetails: "In this digital age, web development skills are highly sought after. Our comprehensive course covers both front-end and back-end development, equipping you with the necessary skills to build dynamic and interactive websites.",
+      price : "₹499"
+    },
+  ];
+  const upcoming = [
     {
       image: "react.png",
       courseName: "FULL STACK DEVELOPMENT",
       courseDetails: "Master Full Stack Development: From Frontend to Backend, become a coding maestro",
-      hoverDetails: "In this digital age, web development skills are highly sought after. Our comprehensive course covers both front-end and back-end development, equipping you with the necessary skills to build dynamic and interactive websites."
+      hoverDetails: "In this digital age, web development skills are highly sought after. Our comprehensive course covers both front-end and back-end development, equipping you with the necessary skills to build dynamic and interactive websites.",
     },
     {
       image: "digital-marketing.png",
       courseName: "DIGITAL MARKETING",
       courseDetails: "Craft your online success story: Dive deep into Digital Marketing strategies with us!",
-      hoverDetails: "With the rise of digital marketing, businesses are constantly seeking professionals with expertise in this field. Our course covers various digital marketing strategies, including SEO, social media marketing, and email marketing, to help you become a well-rounded digital marketer."
-    },
-    {
-      image: "data-science.webp",
-      courseName: "DATA SCIENCE AND MACHINE LEARNING",
-      courseDetails: "Chart your course in the data revolution: Acquire the skills of Data Science and Machine Learning",
-      hoverDetails: "In today's data-driven world, the demand for data scientists and machine learning experts is on the rise. Our course covers essential concepts and tools in data science and machine learning, preparing you for a successful career in this field."
+      hoverDetails: "With the rise of digital marketing, businesses are constantly seeking professionals with expertise in this field. Our course covers various digital marketing strategies, including SEO, social media marketing, and email marketing, to help you become a well-rounded digital marketer.",
     }
   ];
 
@@ -148,9 +152,27 @@ const stories = [
       </div>
       
       <div className={styles.section2} ref={coursesRef}>
-            <h1 className={styles.heading}>OUR COURSES</h1>
-            <div className={styles.gridContainer}>
+            <h1 className={styles.heading}>POPULAR COURSES</h1>
+            <div className={styles.flexRow}>
               {courses.map((course,index) => {
+                return (
+                  <Courses
+                    image={course.image}
+                    courseName={course.courseName}
+                    courseDetails={course.courseDetails}
+                    hoverDetails={course.hoverDetails}
+                    price={course.price}
+                    refElement = {ContactRef}
+                    key={index}
+                    isUpcoming={false}
+                  />
+                )
+              })
+              }
+            </div>
+            <h3 className={styles.sideHeading}>UPCOMING COURSES</h3>
+            <div className={`${styles.flexRow} ${styles.upcoming}`}>
+              {upcoming.map((course,index) => {
                 return (
                   <Courses
                     image={course.image}
@@ -159,6 +181,7 @@ const stories = [
                     hoverDetails={course.hoverDetails}
                     refElement = {ContactRef}
                     key={index}
+                    isUpcoming={true}
                   />
                 )
               })

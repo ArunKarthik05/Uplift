@@ -62,35 +62,19 @@
         text-align: center;
         font-size: $font-size-text;
         color: white;
-        // border:1px solid blue;
-        .closeContainer{
-              display: flex;
-                flex-direction: row;
-                justify-content: center;
-            .close{
-                position: absolute;
-                top: 15%;
-                // display: flex;
-                // flex-direction: row;
-                // justify-content: center;
-                font-size: $font-size-subheading;
-                background-color: rgba(255, 255, 255, 0.3);
-                // box-shadow: 0 4px 2px 0 rgba(201, 201, 201,0.5); 
-                // backdrop-filter: blur(15px);
-                padding: .2rem 1rem;
-                border-radius: 50%;
-                color: rgb(0, 0, 0,.7);
-                display: none;
-                @include respond-to(xs){
-                    display: block;
-                }
-            }
-        }
-        .close:hover{
-            box-shadow: 0 4px 2px 1px $hover-color; 
+        .price{
+            color: black;
+            margin: auto;
         }
     }   
     transition: all 0.5s ease-in-out;
+}
+.price{
+    background-color: #E9E9E9;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    font-weight: bold;
+    width: fit-content;
 }
 .gradientContainer:hover{
     box-shadow: #{$shadow-x-offset} #{$shadow-y-offset} #{$shadow-blur-radius} #{$hover-color};

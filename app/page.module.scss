@@ -67,6 +67,25 @@
         gap:5vh;
     }
 }
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    @include respond-to(xs){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+}
 .heading{
     @extend .heading !optional;
+}
+.sideHeading{
+    text-align: left;
+    font-size: $font-size-subheading;
+    font-family: 'Roboto-Header';
+    color: $color-secondary;
+    font-weight: bold;
+    margin-left: 10%;
 }
