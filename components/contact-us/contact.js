@@ -22,11 +22,33 @@ export const Contact=() =>{
     }
   ];
 
+  const options = [
+    {
+      name : "INDIVIDUAL MASTERY",
+      value : "INDIVIDUAL MASTERY"
+    },
+    {
+      name : "GROUP ACCELERATOR",
+      value : "GROUP ACCELERATOR"
+    },
+    {
+      name : "FULL STACK DEVELOPMENT",
+      value : "FULL STACK DEVELOPMENT"
+    },
+    {
+      name : "DIGITAL MARKETING",
+      value : "DIGITAL MARKETING"
+    },
+
+
+  ]
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [showSuccessPopup, setShowSuccessPopup] = useState(false); 
+  const [selectedCourse,setSelectedCourse] = useState("Select a Course");
   const [isLoading,setIsLoading] = useState(false);
   const [ copied,setCopied ] = useState(false);
 
@@ -47,6 +69,7 @@ const handleSubmit = async (event) => {
           from_name: name,
           mail: email,
           phone: phone,
+          course : selectedCourse,
           message: message
       }
   };
@@ -140,6 +163,14 @@ const handleSubmit = async (event) => {
                     <div className={styles.formGroup}>
                         <label htmlFor="message">Message<span>*</span></label>
                         <input className={styles.textbox} value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Send us a message' name="message" />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="courses">Select a Course<span>*</span></label><br />
+                        <select name="courses" value={selectedCourse} onChange={(e) => setSelectedCourse(e.target.value)} required className={styles.dropdown}>
+                            {options.map((option,i)=>(
+                                <option value={option.value} key={i}>{option.name}</option>
+                            ))}
+                        </select>
                     </div>
                     <div className={styles.btnContainer}><button className={styles.submit} type="submit">Submit</button></div>
             </form>

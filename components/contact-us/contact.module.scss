@@ -89,7 +89,7 @@
                 width: 100%;
                 .formGroup{
                     @extend .flexRow !optional;
-                    justify-content: center;
+                    justify-content: space-between;
                 }
                 label{
                     display: inline-flex;
@@ -111,6 +111,51 @@
                     font-size: 18px;
                     &:focus{
                         outline: none;
+                    }
+                }
+                .dropdown{
+                    // background-color: black;
+                    // color: white;
+                    // padding: 10px;
+                    // border-radius: 1rem;
+                    // option{
+                    //     border-radius: 1rem;
+                    //     padding: 10px;
+                    // }
+                    margin-top: 1rem;
+                    width: 100%; 
+                    background-color: #2c2c2c; 
+                    color: #ffffff; 
+                    border: 1px solid #555; 
+                    padding: 12px 15px; 
+                    border-radius: 6px; 
+                    font-size: 16px; 
+                    cursor: pointer; 
+                    transition: all 0.3s ease-in-out; 
+                    @include respond-to(xs){
+                        font-size: 12px;
+                    }
+                
+                    &:hover {
+                        border-color: $color-secondary; 
+                        background-color: #3a3a3a; 
+                    }
+                
+                    &:focus {
+                        outline: none; /* Remove default outline */
+                        border-color: #f15b59; /* Red border on focus */
+                        box-shadow: 0 0 5px rgba(241, 91, 89, 0.7); /* Add subtle glow on focus */
+                    }
+                
+                    option {
+                        background-color: #2c2c2c; /* Match dropdown background */
+                        color: #ffffff; /* White text for options */
+                        padding: 10px; /* Space inside each option */
+                        font-size: 16px; /* Match dropdown text size */
+                        @include respond-to(xs){
+                            font-size: 12px;
+                            padding: 5px;
+                        }
                     }
                 }
                 .btnContainer{
