@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+@import "../../styles/container.scss";
+@import "../../styles/flex.scss";
+
+.gridContainer{
+    margin:auto;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    background-color: black;
+    padding: 1rem;
+    border-radius: .5rem;
+    width: fit-content;
+    .imgContainer{
+        height: 200px;
+        width: 100%;
+        position: relative;
+    }
+    .playButton {
+        position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        svg{
+            height: 50px;
+            width: 50px;
+        }
+    }
+
+}

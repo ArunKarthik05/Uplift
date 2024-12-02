@@ -59,7 +59,7 @@ export const Courses = ({image,courseName,courseDetails,hoverDetails,refElement,
                           <div className={styles.btnContainer}><div className={styles.price}>{price}{courseName === "GROUP ACCELERATOR" && " -/month"}</div></div>
                       ))}
                     </div>
-                    <div className={styles.btnContainer} onClick={()=>handleClick(refElement)}><CustomButton text="Enroll Now" bgColor="black" textColor="white" hoverColor="rgb(61, 60, 60)" hoverTextColor="white"/></div>
+                    <div className={styles.btnContainer} onClick={()=>handleClick(refElement)}><CustomButton text="Book a Slot" bgColor="black" textColor="white" hoverColor="rgb(61, 60, 60)" hoverTextColor="white"/></div>
                   </>
                 )
                 }

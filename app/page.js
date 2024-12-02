@@ -11,6 +11,7 @@ import Footer from "@/components/footer/footer";
 import AboutUs from "@/components/about-us/about-us";
 import FAQ from "@/components/FAQ/FAQ";
 import Stories from "@/components/success/stories";
+import Insta from "@/components/insta/insta";
 
 export default function Home() {
   const services = [
@@ -25,23 +26,23 @@ export default function Home() {
       para: "Embark on a journey of growth and discovery. Let's unlock your potential, tap into your creativity, and build a foundation for success. Our tailored mentorship programs and interactive group sessions cover a wide array of subjects such as English speaking, basic programming, web development, AI/ML, and digital marketing.",
     },
   ];
-
   const courses = [
     {
       image: "eng-1.png",
       courseName: "INDIVIDUAL MASTERY",
-      courseDetails: "Speak with Confidence: Elevate your Spoken English skills with our dynamic course",
-      hoverDetails: "English proficiency is crucial in today's globalized world. Our inclusive online English courses cater to individuals' diverse needs and constraints, helping you improve your language skills and boost your confidence.",
-      price: "₹14,999"
+      courseDetails: "Speak with Confidence: Elevate your Spoken English skills with our tailored one-on-one sessions.",
+      hoverDetails: "Enhance your English fluency with personalized sessions designed to focus on your unique strengths and challenges. Perfect for professionals, students, or anyone looking to excel in communication, our course ensures rapid progress and confidence-building.",
+      price: "₹14,999",
     },
     {
       image: "eng-2.png",
       courseName: "GROUP ACCELERATOR",
-      courseDetails: "Master Full Stack Development: From Frontend to Backend, become a coding maestro",
-      hoverDetails: "In this digital age, web development skills are highly sought after. Our comprehensive course covers both front-end and back-end development, equipping you with the necessary skills to build dynamic and interactive websites.",
-      price : "₹499"
+      courseDetails: "Collaborate and Communicate: Excel in English with engaging group sessions.",
+      hoverDetails: "Learn and grow together in an interactive group setting, where real-world conversations and collaborative exercises help you refine your English. Ideal for teamwork enthusiasts, this course builds both linguistic and social confidence.",
+      price: "₹499",
     },
   ];
+  
   const upcoming = [
     {
       image: "react.png",
@@ -79,28 +80,16 @@ export default function Home() {
       answer: "Yes, upon successfully completing a course, you will receive a certification from Uplift Edu, which you can use to demonstrate your skills to potential employers."
     }
   ];
-  
 
-const stories = [
-  {
-    name: "Raji",
-    gender : "female",
-    course: "Spoken English",
-    review: "I always dreamt of working in a multinational company, but my lack of confidence in English held me back. Then I found Uplift Edu's Spoken English course. The personalized sessions and expert trainers not only improved my language skills but also boosted my confidence. Thanks to Uplift Edu, I landed my dream job and am excelling in my career."
-  },
-  {
-    name: "Bhuvanesh",
-    gender : "male",
-    course: "Full Stack Web Development",
-    review: "I'm passionate about web development but struggled to find a comprehensive course. Uplift Edu's Full Stack Web Development program provided hands-on training that built my skills and portfolio. This course helped me secure a job as a full stack developer in a top IT company. I credit Uplift Edu for my success."
-  },
-  {
-    name: "Kumar",
-    gender : "male",
-    course: "Digital Marketing",
-    review: "With a background in marketing, I wanted to upgrade my digital skills. Uplift Edu's Digital Marketing course offered an in-depth curriculum and practical training that taught me various strategies and tools. Thanks to this course, I landed a job as a social media manager in a renowned company, turning my passion into a successful career."
-  }
-];
+  const links = [
+    "https://www.instagram.com/upliftedutech/?igsh=MXQ0czZpdzhmbGVjdg%3D%3D",
+    "https://www.instagram.com/upliftedutech/?igsh=MXQ0czZpdzhmbGVjdg%3D%3D",
+    "https://www.instagram.com/upliftedutech/?igsh=MXQ0czZpdzhmbGVjdg%3D%3D",
+    "https://www.instagram.com/reel/C9zFUXgJx5c/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
+    "https://www.instagram.com/p/DCqgxiHTV63/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
+    "https://www.instagram.com/reel/C-cjA9UvZkh/?igsh=d3dvYTY0dGZiZXZt"
+  ];
+  
 
   const homeRef = useRef(null);
   const servicesRef = useRef(null);
@@ -109,6 +98,7 @@ const stories = [
   const ContactRef = useRef(null);
   const storiesRef = useRef(null);
   const aboutRef = useRef(null);
+  const instaRef = useRef(null);
 
   const refs = {
     homeRef,
@@ -117,7 +107,8 @@ const stories = [
     storiesRef,
     FAQRef,
     aboutRef,
-    ContactRef
+    ContactRef,
+    instaRef
   };
 
 
@@ -191,7 +182,7 @@ const stories = [
 
       <div className={styles.section2} ref={storiesRef}>
           <h1 className={styles.heading}>SUCCESS STORIES</h1>
-          <Stories stories={stories}/>
+          <Stories/>
       </div>
 
       <div className={styles.section2} ref={aboutRef}>
@@ -202,6 +193,11 @@ const stories = [
       <div className={styles.section2} ref={ContactRef}>
         <h1 className={styles.heading}>CONTACT US</h1>
         <Contact/>
+      </div>
+
+      <div className={styles.section2} ref={instaRef}>
+        <h1 className={styles.heading}>RECENTLY ON INSTAGRAM</h1>
+        <Insta links={links}/>  
       </div>
 
       <div ref={FAQRef}>
