@@ -12,6 +12,9 @@
     padding: 1rem;
     border-radius: .5rem;
     width: fit-content;
+    @include respond-to(xs) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     .imgContainer{
         height: 200px;
         width: 100%;
